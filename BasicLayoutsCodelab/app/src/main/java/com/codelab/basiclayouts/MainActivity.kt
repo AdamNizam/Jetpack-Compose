@@ -137,7 +137,7 @@ fun AlignYourBodyElement(
             modifier = Modifier
                 .size(96.dp)
                 .border(
-                    border = BorderStroke(2.dp, Color.Black),
+                    border = BorderStroke(2.dp, MaterialTheme.colorScheme.primary),
                     shape = CircleShape
                 ),
             contentAlignment = Alignment.Center
