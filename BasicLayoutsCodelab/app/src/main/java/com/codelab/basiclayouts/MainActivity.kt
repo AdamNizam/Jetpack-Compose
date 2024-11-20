@@ -23,7 +23,9 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -75,6 +77,7 @@ import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSiz
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+import androidx.compose.ui.graphics.Color
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -117,7 +120,6 @@ fun SearchBar(
                 .heightIn(min = 56.dp)
         )
     }
-
 }
 
 // Step: Align your body - Alignment
@@ -131,14 +133,24 @@ fun AlignYourBodyElement(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(drawable),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
+        Box (
             modifier = Modifier
-                .size(88.dp)
-                .clip(CircleShape)
-        )
+                .size(96.dp)
+                .border(
+                    border = BorderStroke(2.dp, Color.Black),
+                    shape = CircleShape
+                ),
+            contentAlignment = Alignment.Center
+        ){
+            Image(
+                painter = painterResource(drawable),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(88.dp)
+                    .clip(CircleShape)
+            )
+        }
         Text(
             text = stringResource(text),
             style = MaterialTheme.typography.bodyMedium,
