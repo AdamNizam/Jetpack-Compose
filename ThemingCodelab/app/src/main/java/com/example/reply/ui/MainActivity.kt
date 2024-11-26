@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val uiState by viewModel.uiState.collectAsState()
             AppTheme {
-                Surface( tonalElevation = 5t.dp) {
+                Surface( tonalElevation = 5.dp) {
                     ReplyApp(
                         replyHomeUIState = uiState,
                         closeDetailScreen = {
@@ -59,13 +59,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
     name = "DefaultPreviewDark"
 )
 @Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
     name = "DefaultPreviewLight"
 )
 @Composable
