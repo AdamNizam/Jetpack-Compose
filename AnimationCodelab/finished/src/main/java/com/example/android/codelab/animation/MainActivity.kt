@@ -20,6 +20,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.android.codelab.animation.ui.AnimationCodelabTheme
 import com.example.android.codelab.animation.ui.home.Home
 
@@ -34,4 +36,15 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+@Preview(
+    showBackground = true,
+)
+@Composable
+private fun Tes() {
+    AnimationCodelabTheme {
+        Home()
+    }
+
 }
